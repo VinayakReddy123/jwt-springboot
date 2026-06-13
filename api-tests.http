@@ -1,0 +1,34 @@
+### JWT Auth API Tests
+### Usage: Click "Send Request" above each block (REST Client extension)
+
+@baseUrl = http://localhost:8080
+@contentType = application/json
+
+# ── Auth Endpoints ────────────────────────────────────────────────────────────
+
+### Register a new user
+POST {{baseUrl}}/auth/register
+Content-Type: {{contentType}}
+
+{
+    "email": "vinay@example.com",
+    "password": "StrongPass123"
+}
+
+### Login
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: {{contentType}}
+
+{
+    "email": "vinay@example.com",
+    "password": "StrongPass123"
+}
+
+### Store the token from login response
+@accessToken = {{login.response.body.accessToken}}
+@refreshToken = {{login.response.body.refreshToken}}
+
+### Access a protected endpoint
+GET {{baseUrl}}/api/me
+Authorization: Bearer {{accessToken}}

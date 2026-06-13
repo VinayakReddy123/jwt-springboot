@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run AuthenticationApplication",
+            "request": "launch",
+            "mainClass": "com.backendauth.authentication.AuthenticationApplication",
+            "projectName": "authentication",
+            "envFile": "${workspaceFolder}/authentication/.env",
+            "vmArgs": "-Dspring.profiles.active=dev"
+        },
+        {
+            "type": "java",
+            "name": "Debug AuthenticationApplication",
+            "request": "launch",
+            "mainClass": "com.backendauth.authentication.AuthenticationApplication",
+            "projectName": "authentication",
+            "envFile": "${workspaceFolder}/authentication/.env",
+            "vmArgs": "-Dspring.profiles.active=dev",
+            "console": "integratedTerminal"
+        }
+    ]
+}

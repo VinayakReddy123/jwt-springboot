@@ -1,0 +1,29 @@
+{
+    // Point Java to the Maven wrapper inside the authentication module
+    "java.import.maven.enabled": true,
+    "java.project.referencedLibraries": [
+        "authentication/target/dependency/**/*.jar"
+    ],
+    "maven.executable.path": "${workspaceFolder}/authentication/mvnw",
+    "maven.terminal.useJavaHome": true,
+
+    // Spring Boot Dashboard — auto-detect the app
+    "spring-boot.ls.java.home": "",
+
+    // REST Client base URL — change per environment
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "baseUrl": "http://localhost:8080"
+        },
+        "dev": {
+            "baseUrl": "http://localhost:8080"
+        }
+    },
+
+    // SonarLint — project-level rules
+    "sonarlint.rules": {
+        "java:S2068": { "level": "on" },
+        "java:S5344": { "level": "on" },
+        "java:S3330": { "level": "on" }
+    }
+}
